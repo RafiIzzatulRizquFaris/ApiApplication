@@ -25,7 +25,7 @@ import cz.msebera.android.httpclient.Header;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView tvUsername, tvPassword, tvIdUser, tvEmail, tvResult;
-    Button btnGet, btnPost, btnRv;
+    Button btnGet, btnPost, btnRv, btnLocal;
     ProgressBar pg;
     EditText edtUsername, edtEmail, edtPassword, edtSearch;
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnPost.setOnClickListener(this);
         btnRv = findViewById(R.id.btn_rv);
         btnRv.setOnClickListener(this);
+        btnLocal = findViewById(R.id.btn_local);
+        btnLocal.setOnClickListener(this);
         pg = findViewById(R.id.progress);
 
         edtUsername = findViewById(R.id.edt_username);
@@ -73,6 +75,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_rv:
                 Intent intent = new Intent(MainActivity.this, RecycleActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.btn_local:
+                Intent intentLocal = new Intent(MainActivity.this, LocalActivity.class);
+                startActivity(intentLocal);
                 break;
         }
     }
